@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 구구단 2~9 사이의 숫자를 입력받아 구구단을 출력하세요
+		단 2~9 사이의 값이 아닐경우 '이미지(아무거나)출력하기' -->
+    <script>
+        
+        /* 
+        let dan=prompt("츌력할 구구단을 입력");
+        
+        let imgTag="";
+        //let mul=dan*i; 이 선언을 for문 밖에다 했을땐 안먹혔음
+            왜냐면 i는 포문 안에있고 저 선언은 영역밖이었으니
+            안으로 가져와야 먹혔음
+        document.write(`&nbsp;&nbsp;${dan}단<br><br>`)
+        for (let i=1;i<=9;i++){
+            let mul=dan*i; 
+            document.write(`${dan}x${i}=${mul}<br>`)
+        }
+        if (dan < 2 || dan > 9) {
+            imgTag=`<img alt"18" src="../연예인사진/18.jpg">`;
+		}
+         */
+
+        let dan=prompt("출력할 구구단을 입력");
+        
+        let imgTag="";
+        
+        document.write(`&nbsp;&nbsp;${dan}단<br><br>`)
+       /*  for (let i=1;i<=9;i++){
+            document.write(`${dan}x${i}=${dan*i}<br>`)
+        }
+        //${dan}*${i} 이렇게 쓰면 *가 문자로 인식되기 때문에 안먹힘 ${dan*i}로 해야 곱하기가 제대로 먹힌 값이 나옴
+        if (dan < 2 || dan > 9) {
+            imgTag=`<img alt"18" src="../연예인사진/18.jpg">`;
+            document.write(imgTag)
+		} 이상태로하면 10입력하면 구구단이랑 사진둘다뜸*/
+
+        if (dan < 2 || dan > 9) {
+            imgTag=`<img alt"18" src="../연예인사진/18.jpg">`;
+            document.write(imgTag);
+		}else{
+            for (let i=1;i<=9;i++){
+            document.write(`${dan}x${i}=${dan*i}<br>`)
+            }
+        }
+
+        
+
+
+    </script>
+    
+</body>
+</html>

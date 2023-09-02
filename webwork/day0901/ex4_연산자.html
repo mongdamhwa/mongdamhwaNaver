@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body *{
+            font-size: 30px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        } /* 바디의 모든 하위태그 택할때 공백(*)씀 */
+    </style>
+</head>
+<body>
+    <script>
+        let su1=prompt("숫자1 입력",10);
+        let su2=prompt("숫자2 입력",20);
+
+        console.log("su1"+typeof(su1));//내부적으로 어떤 타입으로 되어있는지 확인하기
+        console.log("su2"+typeof(su2)); //확인결과 둘다 string으로 나옴
+        //특이하게 string일경우 +만 나란히 이어서 나열되고, 나머지 연산은 잘됨
+
+        //let add=su1+su2; 
+        //위처럼 하면 더해지지않고 나란히 써지는 오류남 정수타입으로 변환해야함
+        //let add=parseInt(su1)+parseInt(su2); 
+        /*위에처럼 정수타입으로 변환필요 자바에선 integer.parseInt 쓰는거랑 같지*/
+        let add=Number(su1)+Number(su2);//정수든 실수든 문자열을 숫자타입으로 변환해줌 parseInt는 5.3이면 그냥 5로 바꾸는데 Number는 실수 정수 상관없이 인식하지
+
+        let sub=su1-su2;
+        let mul=su1*su2;
+        let div=su1/su2;
+
+        let s=`<b>add=${add}<br>sub=${sub}<br>mul=${mul}<br>div=${div}<br>`;
+
+        document.write(s);
+
+    </script>
+</body>
+</html>

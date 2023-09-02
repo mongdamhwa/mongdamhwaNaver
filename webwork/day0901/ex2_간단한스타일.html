@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Hahmlet&family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&family=Orbit&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <!-- 문서 삽입형 스타일 적용 -->
+    <style>
+        /*style영역에서의 주석처리*/
+        /* class:./id:# */
+        span{
+            font-family: 'Orbit';
+        }
+        .s1{  /* 태그 상관없이 클래스명이 s1이면 모두적용 */
+            font-size: 30px;
+        }
+        div.s1{ /*div 중 클래스가 s1인것에만 적용*/
+            color: #27678b;
+        }
+        .s2,span.s3{ /*클래스가 s2인 모든태그와 span태그중 s3태그에 적용*/
+            background-color: aquamarine;
+        }
+        /* div태그중 클래스명이 s1,s3인경우에만 border적용하기 */
+        div.s1,div.s3{
+            border: 5px solid #27678b; /*선굵기, 선종류, 색상 따로줘도되고 같이줘도됨*/
+        }
+        /*보더 속성 각각 따로줄때*/
+        h1{
+            border-width: 5px;
+            border-color: #af7faf;
+            border-style: double;
+            border-radius: 25px; /*테두리 둥글게 클수록 둥글다*/
+        }
+
+    </style>
+</head>
+<body>
+    <!--스타일정의 : 태그삽입형 -->
+    <h1 style="color:palevioletred; font-family: 'Hahmlet'; 
+    background-color: #392439;">오늘 날씨가 좋아요</h1>
+    <h1 style="color: rgb(187, 76, 48);background-color: rgba(6, 37, 6,0.5);font-family: 'Orbit';">안녕</h1>
+    <span class="s1">Java</span>
+    <span class="s2">HTML</span>
+    <span class="s3">JavaScript</span>
+    <hr>
+    <div class="s1">자바</div>    
+    <div class="s2">에이치티엠엘</div>    
+    <div class="s3">자바스크립트</div>
+
+
+</body>
+</html>

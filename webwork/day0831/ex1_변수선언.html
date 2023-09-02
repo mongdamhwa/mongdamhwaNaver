@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>예제 1</title>
+</head>
+<body>
+    <h2>body 안에서 스크립트 실행하기</h2>
+    <img src="../mycar/mycar1.png" alt="자동차1" border="5" width="200">
+    <!-- ../은 상위폴더 부모폴더니까 여기선 웹워크 폴더 -->
+    <!-- 스크립트에서 글자와 이미지를 출력해보자 -->
+
+    <script>
+        //이 안은 자바스크립트 영역 여기선 주석도 자바처럼 달면 됨
+        // 브라우저로 html태그출력 : document.write로 출력
+        // 브라우저 console창 출력 : console.log로 출력
+        document.write("<br><br>여기는 스크립트 영역입니다<br><br><br>")
+
+        /*var는 함수형 변수 let은 구역형 변수
+        근데 변수 안줘도됨 안주면 그냥 전역형 변수됨*/
+
+        var s1="../연예인사진/kimtaehee.jpg";
+        var s2="../연예인사진/soojee.jpg";
+
+        //사진 출력1
+        /*자바스크립트에선 작은따옴표() 큰따옴표(")의 의미가 같다
+        따옴표 안에 따옴표 넣을경우 서로 교차되게 넣어주면 된다
+        바깥이 큰따옴이면 안은 작은따옴 밖이 작으면 안은 크면됨*/
+        document.write("<img alt='사진1' src='"+s1+"' width=200>");
+        //위에건 es5(에크마스크립트5)에서 쓰던방식
+        document.write(`<img alt="사진2" src="${s2}" width=200>`)
+        //이건 es6에서 쓰는 방식 , ${변수값} 이러면 따옴표 헤깔리지않지
+
+
+    </script>
+</body>
+</html>

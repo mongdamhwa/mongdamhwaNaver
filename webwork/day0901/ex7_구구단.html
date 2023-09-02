@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+        <!-- start와 end값을 입력받아 해당 구구단을 출력하시오
+        (가로방향-자바에서처럼)
+        단 start가 end 보다 클경우 두 값을 서로 바꾼후 출력하시오 -->
+        
+    <script>
+        let start=prompt("시작할 구구단을 입력");
+        let end=prompt("마지막 구구단을 입력");
+
+        for(let dan=start;dan<=end;dan++)
+        {
+            document.write(`${dan}단&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`);
+        }
+        document.write(`<br><br>`)
+
+        for(let i=1;i<=9;i++){
+            for(let dan=start;dan<=end;dan++)
+			{
+				document.write(`${dan}x${i}=${dan*i}&nbsp;`);
+			}
+            document.write(`<br>`) /*만약 시작 2 끝 4를 입력했으면 
+            2x1=2 3x1=3 4x1=4 2x2=4 3x2=6 4x2=8  이렇게 일자로
+            나오는데 2,3,4 한번돌고 바깥에다 document.write(`<br>`)
+            줄넘김 한번 넣어주면 한바퀴돌고 한번 띄고 한바퀴돌고 
+            한번띄어지니까 가로 세로 정렬이 되지*/
+        }
+        
+    </script>
+    
+</body>
+</html>
