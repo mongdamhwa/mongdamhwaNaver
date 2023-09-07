@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      figure {
+        float: left;
+      }
+      /*공백:모든 하위태그/  >:바로 아래의 태그를 의미
+      근데 사실 여기에서는 복잡하지않아서 figure >img 말고 figure img로 공백으로 해도됨*/
+      figure > img {
+        width: 130px;
+        height: 160px;
+        border: 3px inset grey;
+      }
+
+      figure > figcaption > h3 > b {
+        font-family: Arial, Helvetica, sans-serif;
+        margin-left: 50px;
+        color: green;
+        /*얘도 지금은 태그가 많지않아서 figure b{}로 처리해도됨,
+        근데 복잡해지고 태그많아질땐 정확하게 >로 경로 나가는게 좋지*/
+      }
+    </style>
+  </head>
+  <body>
+    <img src="../mycar/mycar10.png" alt="자동차" width="150" />
+    <img src="../mycar/mycar6.png" alt="자동차2" width="150" />
+    <img src="../mycar/mycar9.png" alt="자동차3" width="150" />
+    <br />
+    <b>검은세단</b>
+    <b style="margin-left: 100px">하얀차</b>
+    <b style="margin-left: 100px">빨간차</b>
+    <hr />
+
+    <!-- 위에 처럼 이미지 주고 밑에 글씨쓰면 글씨사이 간격줄때 마진이라던가 이런거 일일이 계산해서 하나하나 다 줘야하는데
+    figure 이용하면 편리하게 가능 -->
+    <figure>
+      <img src="../연예인사진/14.jpg" alt="" />
+      <figcaption>
+        <h3><b>유승호</b></h3>
+      </figcaption>
+    </figure>
+    <figure>
+      <img src="../연예인사진/6.jpg" alt="" />
+      <figcaption>
+        <h3><b>한예슬</b></h3>
+      </figcaption>
+    </figure>
+  </body>
+</html>

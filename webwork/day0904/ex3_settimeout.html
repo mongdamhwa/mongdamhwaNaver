@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      /*window.onload = function () {
+        alert("안녕하세요"); //윈도우가 로드될때 해당함수를 호출하라 
+      }; 
+      /*window.onunload = function () {
+        alert("안녕히 가세요");
+      };*/
+
+      window.onload = function () {
+        //사진의 요소값을 얻는다
+        let photo = document.getElementById("myphoto");
+        //사진의 src 속성을 변경한다
+        //photo.setAttribute("src", "../연예인사진/15.jpg");
+        //이렇게 하면 박보영은 전혀 안나오고 바로 설현나옴
+        setTimeout(function () {
+          photo.setAttribute("src", "../연예인사진/15.jpg");
+        }, 3000); //이렇게 하면 박보영 3초 나오고 설현나옴 이렇게 하고 싶을때 셋타임아웃을 쓰는거야
+
+        setTimeout(function () {
+          photo.setAttribute("src", "../연예인사진/12.jpg");
+        }, 5000); //설현바뀌고 다시 5초후에 보영으로 전환하고플때
+      };
+
+      //get, set차이 설명해준거같은데 못들음
+    </script>
+  </head>
+  <body>
+    <img src="../연예인사진/12.jpg" alt="" width="200" id="myphoto" />
+  </body>
+</html>

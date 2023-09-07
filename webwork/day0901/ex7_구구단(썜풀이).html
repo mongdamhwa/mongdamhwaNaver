@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div.gugu {
+        float: left;
+        /* 태그를 왼쪽에서 우측방향으로 나열 */
+        width: 150px;
+        font-family: "Impact";
+      }
+    </style>
+  </head>
+  <body>
+    <!-- start와 end값을 입력받아 해당 구구단을 출력하시오
+        (가로방향-자바에서처럼)
+        단 start가 end 보다 클경우 두 값을 서로 바꾼후 출력하시오 -->
+
+    <h2>구구단 출력하기(다중for문)연습</h2>
+
+    <script>
+      let start = Number(prompt("시작할 구구단을 입력"));
+      let end = Number(prompt("마지막 구구단을 입력"));
+      //스타트가 엔드보다클경우 두값서로 바꾸기
+      if (start > end) {
+        let temp = start;
+        start = end;
+        end = temp;
+      }
+
+      document.write(`<h2>start=${start}, end=${end}</h2>`);
+      let s = "";
+      for (let i = 1; i <= 9; i++) {
+        for (let dan = start; dan <= end; dan++) {
+          s += `<div class="gugu">${dan}x${i}=${dan * i}</div>`;
+        }
+        s += "<br>";
+      }
+      document.write(s);
+
+      /*내가 숙제로 풀이할땐 여기서처럼 미리 let s=""; 같은 변수선언없이 document.write(`${dan}x${i}=${dan*i}`); 
+      그냥 이렇게 했는데 
+      document.write(s);
+      쌤이 한것처럼 미리 저렇게 변수선언하고 s+= 이런식으로 변수가 뭔지다 써놓은 후에 마지막에 document.write(s); 
+      이거로 출력하니까 깔끔하네
+      변수에 미리 다 누적 시켜놓은 후에 한번에 출력하려고 그렇게 하신것
+      변수가 복잡할수록 이렇게 하는게 더 깔금하지*/
+    </script>
+  </body>
+</html>

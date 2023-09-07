@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 입력창 만들어서 난수 구하는 자바스크립트 만들고
+    정답일시 밑에 있는 이미지가 초마다 변경되도록 만들기 -->
+    <input type="button" value="새로운 난수 발생하기" id="btnrnd" />
+    <br /><input type="text" id="txtmsg" />
+    <input type="button" id="btn1" value="OK" />
+    <div id="msg">숫자 출력되는 곳</div>
+    <script>
+      let t = document.getElementById("txtmsg");
+      let b = document.getElementById("btn1");
+      let msg = document.getElementById("msg");
+      let rnd; //난수를 구할 변수
+      //난수 버튼 이벤트
+      document.getElementById("btnrnd").onclick = function () {
+        //1~100사이의 난수 구하기
+        //그냥 Int쓰면 안되고 parseint쓰면 됨 자바의 int는 자바스크립트에선 parseint쓰면됨
+        rnd = parseInt(Math.random() * 100) + 1;
+        //console에 출력
+        console.log(rnd);
+      };
+
+      b.onclick = function () {
+        let data = t.value;
+
+        if (data > rnd) {
+          msg.innerHTML += "<br>정답이" + data + "보다 작습니다";
+        } else if (data < rnd) {
+          msg.innerHTML += `<br>정답이 ${data}보다 큽니다`;
+        } else if (data == rnd) {
+          num = parseInt(Math.random() * 15) + 1;
+          msg.innerHTML += `<br>정답입니다<img src="../mycar/mycar${num}.png" width="300" alt="" />`;
+        }
+        t.value = "";
+        t.focus();
+      };
+    </script>
+  </body>
+</html>

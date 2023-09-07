@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div.buttons {
+        margin-left: 30px;
+        margin-top: 20px;
+      }
+      div.buttons button {
+        width: 80px;
+        height: 40px;
+      }
+
+      #photo {
+        border: 10px groove gold;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 3개의 버튼 ,작게, 크게, 무작위 
+    점점작게: 사진이 5px씩줄어든다 (50보다 클경우에만 변경)
+    점점크게: 사진이5px씩커진다 (600px보다 작을경우)
+랜덤1~20 사이난수를구한후 해당 사진으로 변경하기-->
+
+    <!-- 버튼 -->
+    <div class="buttons">
+      <button type="button" id="btnminus">-</button>
+      <button type="button" id="btnplus">+</button>
+      <button type="button" id="btnrandom">gotcha!</button>
+      <br />
+      현재사진 너비 : <span id="fsize"></span>
+    </div>
+
+    <img src="../연예인사진/12.jpg" style="width: 300px" id="photo" alt="" />
+
+    <script>
+      let p = document.getElementById("photo");
+      //이렇게 포토값미리 밖에 빼두면 밑에 버튼 마다 일일이 쓸필요가 없네
+      //+버튼
+      document.getElementById("btnplus").onclick = function () {
+        let imgw = parseInt(p.style.width, 10);
+        if (imgw < 600) {
+          imgw += 5;
+          console.log(imgw);
+          p.style.width = imgw + "px";
+          fsize.innerText = imgw; //현재사진너비 보여주네
+        }
+      };
+
+      //-버튼
+      document.getElementById("btnminus").onclick = function () {
+        let imgw = parseInt(p.style.width);
+
+        if (imgw > 50) {
+          imgw -= 5;
+          console.log(imgw);
+          p.style.width = imgw + "px";
+          fsize.innerText = imgw;
+        }
+      };
+
+      document.getElementById("btnrandom").onclick = function () {
+        //1~2-사이 난수발생
+        let idx = parseInt(Math.random() * 20) + 1;
+        //이미지의 요소값을 얻는다
+        photo.setAttribute("src", `../연예인사진/${idx}.jpg`);
+      };
+    </script>
+  </body>
+</html>

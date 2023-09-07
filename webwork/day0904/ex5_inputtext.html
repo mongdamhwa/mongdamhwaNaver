@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div#msg {
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        font-size: 30px;
+        margin-top: 30px;
+        color: palevioletred;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" id="txtmsg" />
+
+    <!-- 버튼은 인풋타입 버튼타입 두가지로 만들수있음 -->
+
+    <input type="button" id="btn1" value="읽기" />
+    <div id="msg">Message 출력되는 곳</div>
+    <script>
+      let t = document.getElementById("txtmsg");
+      let b = document.getElementById("btn1");
+      let msg = document.getElementById("msg");
+
+      //버튼 이벤트- 버튼 클릭시 해당 함수가 호출된다
+      b.onclick = function () {
+        //입력한 문자열을 가져온다
+        let data = t.value;
+
+        //msg에 출력
+        //msg.innerText = data; //단순 텍스트는 innerText써도 되지만 혹시 태그나 이런게 섞여있으면 innerHTML쓰면 된다/ innerText는 태그도 그대로 문자로 출력됨
+        //msg.innerHTML = "<u>" + data + "</u>";
+        msg.innerHTML = "<br><u>" + data + "</u>";
+        //"<br><u>" + data + "</u>"; 이거는 `<br><u>" ${data} "</u>`; //이거랑같음
+        //만약 msg.innerHTML= 이 아니라 +=을 쓰면 기존출력한거 유지되면서 추가되면서 출력됨
+
+        //입력한 값을 지운후 포커스를 준다
+        t.value = "";
+        t.focus();
+      };
+    </script>
+  </body>
+</html>

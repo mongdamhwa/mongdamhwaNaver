@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h3.title {
+        color: blueviolet;
+        background-color: aquamarine;
+        width: 300px;
+        padding-left: 150px; /* 태그안쪽 여백중왼쪽 */
+      }
+
+      h4 {
+        color: palevioletred;
+        font-family: "Comic Sans MS";
+        margin-left: 100px;
+        /* 태그바깥쪽 여백중에 왼쪽여백 */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 구구단 2~9 사이의 숫자를 입력받아 구구단을 출력하세요
+		단 2~9 사이의 값이 아닐경우 '이미지(아무거나)출력하기' -->
+
+    <h2>구구단을 입력받아출력하기</h2>
+    <script>
+      let dan = Number(prompt("출력할 구구단을 입력"));
+      /* let dan = prompt("출력할 구구단을 입력"); 이렇게만 써도 사실 알아서 숫자로 잘인식하긴 하는데 가끔 잘 안되서
+      스트링으로인식될때도 있음 이럴땐 아싸리 let dan = Number(prompt("출력할 구구단을 입력")) 이렇게 쓰면 첨부터 숫자로 인식;*/
+      console.log(typeof dan);
+
+      if (dan < 2 || dan > 9) {
+        imgTag = `<img alt"18" src="../연예인사진/18.jpg" width+=200>`;
+        document.write(imgTag);
+      } else {
+        let s = "<h3 class='title'> ** " + dan + "단 **</h3><br>";
+        for (let i = 1; i <= 9; i++) {
+          s += `<h4>${dan} x ${i} = ${dan * i}</h4>`;
+        }
+        document.write(s);
+      }
+    </script>
+  </body>
+</html>
